@@ -1,6 +1,6 @@
-service: Products
+service: ${param:department, "promodeagro"}-${param:product, "ecom"}-${param:service, "api"}
 
-frameworkVersion: "3"
+frameworkVersion: "4"
 
 provider:
   name: aws
@@ -26,10 +26,6 @@ provider:
 
 functions:
   - ${file(products/function.yml)}
-
-
-
-
 resources:
   Resources:
     ProductsTable:
